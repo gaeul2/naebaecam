@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!-- saved from url=(0145)file:///C:/Users/rkdmf/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/%EB%82%B4%EC%9D%BC%EB%B0%B0%EC%9B%80%EC%BA%A0%ED%94%84/1223/homework.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>오늘의 숙제 - 가을</title>
+<style> /**/
+    .border{
+        margin : auto;
+        width: 480px;
+        height: 800px;
+        border: 0.5px solid darkgray;
+    }
+    .top{
+        background-color: lightblue;
+        width : 480px;
+        height: 450px;
+        text-align: center;
+        color: white;
+        font-size: x-large;
+        display:table-cell;
+        line-height: 350px; /*줄높이로 글씨 위치 조정 한줄일떄만 가능*/
+        vertical-align: center;
+    }
+    .bottom{
+        background-color: white;
+        width : 480px;
+        height : 350px;
+    }
+    .bottom_contents{
+        font-size: small;
+        padding-top: 170px;
+
+        display: flex;
+        flex-direction: row; /*내용물을 위아래로 정렬할지(column), 좌우로정렬할지(row) 거의 얘만바꿔서 씀*/
+        justify-content: center;
+        align-items: center;
+
+        text-align: center;
+    }
+    .bottom_contents > div{
+        margin: auto 25px auto 25px;
+    }
+    .profile{
+        width : 180px;
+        height: 180px;
+        object-fit: cover; /* 사진에서 포커스 중앙에 맞추기*/
+        border-radius: 100px; /* 동그랗게 만들기 */
+        text-align: center;
+
+        position:absolute; /*프로필위치 내가원하는 곳에*/
+        top: 370px;        /*위에서부터 어디*/
+        left: 767px;      /*왼쪽에서부터 어디*/
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .pic{
+        width : 180px;
+        height: 180px;
+        object-fit: cover; /* 사진에서 포커스 중앙에 맞추기*/
+        border-radius: 100px; /* 동그랗게 만들기 */
+
+
+    }
+</style></head>
+
+<body>
+    <div class="profile">
+        <img class="pic" src="./오늘의 숙제 - 가을_files/뽀야사진.jpg"><p>뽀야</p>
+
+    </div>
+    <div class="border">
+        <div class="top">
+            <p>....? 왜...?</p>
+        </div>
+        <div class="bottom">
+            <div class="bottom_contents">
+                <div class="btn1">
+                    <img src="./오늘의 숙제 - 가을_files/나와의 채팅.png" width="80">
+                    <p>나와의 채팅</p>
+                </div>
+                <div class="btn2">
+                    <img src="./오늘의 숙제 - 가을_files/프로필관리.png" width="80">
+                    <p>프로필 관리</p>
+                </div>
+                <div class="btn3">
+                    <img src="./오늘의 숙제 - 가을_files/카스.png" width="80">
+                    <p>카카오스토리</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body></html>
