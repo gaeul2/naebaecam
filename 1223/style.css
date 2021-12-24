@@ -1,0 +1,71 @@
+#main-container { /*전체를 감싸는 div의 id*/
+  text-align: center;
+  width: 480px;
+  height: 800px;
+  background-color: rgb(255, 166, 166, 1);
+  position: relative;
+  border-style: solid;
+  border-color: rgb(187, 187, 187);
+  border-width: 1px;
+  margin: 0 auto;
+}
+/**/
+/*id를 부를때 앞에 #+id이름으로 부르는군*/
+#text-wrapper { /* 텍스트와 라인부분을 div로 감싸줌.*/
+  width: 350px; /*div자체 폭을 줄여주고*/
+  margin: 0 auto; /*div를 가운데로 오게 여백조정.(위에서 가운데정렬됨)*/
+  margin-top: 150px; /*위에서 150px만큼 내려옴. 이때 또치 프로필사진도 같이 움직임*/
+  color: white;
+  font-size: 18px;
+}
+
+#line { /* 프로필 윗쪽에 라인.*/
+  width: 35px;/*의 가로길이를 지정해줌.*/
+  margin: 0 auto; /*얘없으면 왼쪽으로 쏠림. 가운데로 오게*/
+}
+/**/
+#icons-container {/*아이콘+글자 있는 div들의 모임*/
+  width: 480px;
+  height: 300px;
+  background-color: rgba(255, 255, 255, 1);
+  position: absolute; /*가장 가까운 위치에 있는 부모기준 배치. relative 없으면 html body를 사용해서\n
+                       스크롤이 이동하면 같이움직이는 문제가 생김... */
+  bottom: 0px;/*얘를 안하면 아이콘친구들이 한없이 내려가더라*/
+  display: flex; /*얘네를 해줘야 클래스로 지정한 icon-wrapper가 가로로 쭉 나열된다.(column을 지정하지않으면 알아서 row로됨)*/
+  justify-content: center; /* 얘를 해주면 icon-wrapper가 가운데로 위치함*/
+  align-items: center; /*얘를 해주니 높이에서 가운데로 오는듯*/
+}
+/*class로 지정한 친구들은 .클래스이름 으로 호출*/
+.icon-wrapper { /*아이콘 이미지와 글씨들을 div에 묶고, 같은모양,구성의 div가 3개임.*/
+                 /*그래서 동일하게 효과를 주기위해 클래스를 똑같이 줌.*/
+  margin-top: 100px; /*아이콘,글씨를 묶은 div3개를 묶은 상위div에 icons-container라는 id가 지정되어있음.\n
+                      /*저기에서 display :flex, justify-content:center; 를 해줘야 얘네셋이 가로로 주루룩 놓임.*/
+  width: 100px; /*넓이를 주니 justify-content 의 센터에 맞게 사이간격이 벌어짐*/
+  height: 100px;
+}
+
+.icon { /* 이녀석들은 아이콘 크기클래스!*/
+  width: 54px; /*이거 지정안하면 본래 지 크기만큼 커짐*/
+  height: 54px;
+}
+
+.small-text {/*아이콘 밑에 각각 써진 글씨들에 같은 효과주려고 클래스로 설정*/
+  font-size: 12px;
+}
+
+#image-wrapper { /*얘는 또치 그림 div의 id*/
+  position: relative; /*이걸 적지 않으면 또치이미지 반이 밑의 하얀박스 div에 가려 보이지 않았다.\n
+  보통 position relative는 이전 요소(주로 부모 요소)에 자연스럽게 연결하여 위치를 지정한다고 한다.*/
+  z-index: 1;
+  margin: 0 auto;
+  margin-top: 170px;
+  font-size: 20px;
+}
+
+#image {/*얘는 또치 이미지의 id*/
+  width: 145px;
+  height: 145px;
+  border-radius: 50%; /*너비,높이를 같게하고 border-radius를 백분율 50%로 주면 원이된다.*/
+  /*object-fit: cover; 나는 이부분부터 튜터님과 달랐는데 위에처럼 너비,높이 같게한거까진 같고. 이걸했더니 포커스가 중앙에 맞춰졌다.!*/
+  /*border-radius: 100px; 나는 px로 모서리를 지정했다.*/
+}
