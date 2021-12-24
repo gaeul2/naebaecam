@@ -1,0 +1,76 @@
+#icons-container {/*아이콘 말곤 갖고있는게 없는 아래친구.*/
+    width: 480px; /*너비는 숙제에서 480px로 딱 정해짐.*/
+    height: 300px; /*800에서 나눠가질꺼니가 딱 이만큼만 */
+    background-color: white; /*구분위해 일부러 흰색말고 다른색 넣음. 다하고 흰색으로 바꾸자*/
+    display: flex;
+    justify-content: center; /*flex만 하면 그냥 가로방향으로 나열이니까 메인축(가로)에서 정렬..center니까 가운데정렬\n
+                              왜 space-around나 space-evenly안쓰냐면 아이템사이가 너무 벌어지니까..*/
+    align-items: center; /*얘는 수직축(세로) 방향에서의 정렬을 도와줌. center니까 가운데정렬*/
+    position: absolute;/*얘 준 이유가 이거네... 전체박스안에 들어가게 해놔서 조상div인 main-container에 relative 필수!\n
+                         그친구가 없으면 bottom걸어도 html body에 붙어서 한없는 밑까지 가*/
+    bottom: 0px; /*position absolute하고 밑으로 내려가게 해놓으려고 이게 있는거여따 position absolute 없으면 동작하지 않음\n
+                    bottom 50px로 주면 main-container의 바닥에서 50px 만큼 위로 올라온 밑으로감 0으로해놓으면 딱 main끝에 맞춤*/
+
+}
+.icon-wrapper{ /*아이콘이랑 글자묶은 div들이잖아... */
+    margin-top: 100px; /*정렬해놓은 상태에서 위쪽여백을 좀더 주자*/
+    margin-left: 30px;
+    width: 80px;/*그래서 넓이 줘서 사이간격을 균일하게 띄우는거야...*/
+    /*height: 100px;!*얘는 굳이...?*!*/
+}
+/**/
+.icon{/*아이콘 사진 */
+    width : 54px;
+    height : 54px;
+}
+.small-text{/*아이콘 밑에 글씨!*/
+    font-size: 12px;
+}
+
+/* 이제부터 상태메세지 박스들 차례*/
+#line{
+    width : 30px;
+}
+#text-wrapper{
+    background-color: #43918b;
+    width : 280px; /*너비는 숙제에서 480px로 딱 정해짐.*/
+     /*800에서 나눠가지는데 밑에박스가 300가져갔으니 여긴 500 */
+    margin : 0 auto;/*양옆 잡아두고*/
+    margin-top: 180px;/*위에서 여백 채우는게 제일 나은듯*/
+    color : white;
+    font-size: 18px;
+}
+
+/*야 메인 나와*/
+#main-container{ /*전체를 감싸는 박스*/
+    background-color: #43918b;
+    width: 480px;
+    height: 800px;
+
+    position: relative;
+    border : 1px solid gray; /*이 밑에줄이나 이거나 같음*/
+    /*border-style: solid;*/
+    /*border-color: rgb(187, 187, 187);*/
+    /*border-width: 1px;*/
+    margin: 0 auto;/*위아래 여백을 0, 양옆을 auto로 주겠다는 뜻*/
+}
+/*이제 대망의 뽀야사진*/
+#image-wrapper{
+    position:relative;/*얘없으면 z-index:1해도 사진 안보이고 잘림 */
+    z-index: 1; /*사진을 가려지지않고 개체위로 꺼내줌*/
+    text-align: center;
+    margin-top: 120px;
+
+}
+#image{
+    width : 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 200px;
+    /*이건 튜터님 방법인데 뽀야사진이 가로세로 길이차이가 많이나서 달라서 뽀야가 찌그러진다.*/
+    /*width: 200px;*/
+    /*height: 200px;*/
+    /*border-radius: 50%; */
+
+}
+/**/
