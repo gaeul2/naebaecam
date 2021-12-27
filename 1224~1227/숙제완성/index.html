@@ -1,0 +1,241 @@
+<!--튜터님이라면 헤더와 푸터를 먼저 구현하셨을것 같다고 해서 일단 구현해보자-->
+<!--헤더와 푸터사이에 메인컨테이너를 만들어서 나머지부분 구현-->
+<!--큰 부분은 4가지 헤더/푸터/컨테이너/메인-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>인스타그램 같은 페이지</title>
+    <link rel="stylesheet" href="style.css" >
+</head>
+<body>
+    <div id="desktop-header">
+        <div id ="desktop-header-left">
+            <img src="insta-logo.png">
+        </div>
+        <input type="search" placeholder="       검색"><!--음 잔꾀로 이렇게 했는데 다른방법있나?-->
+        <div id ="desktop-header-right">
+            <img class = "desktop-header-icon" src="home@3x.png">
+            <img class = "desktop-header-icon" src="dm@3x.png">
+            <img class = "desktop-header-icon" src="trending@3x.png">
+            <img class = "desktop-header-icon" src="like@3x.png">
+            <img class = "desktop-header-icon" src="more@3x.png">
+        </div>
+    </div>
+    <div id="full-container">
+        <div id="main"><!--얘를 div로 묶고-->
+            <div id="mobile-header">
+                <img class="header-icon" src="camera@3x.png" />
+                <img id="logo" src="insta-logo.png" />
+                <img class="header-icon" src="dm@3x.png" />
+            </div>
+            <div id ="container">
+                <div id ="story-container">
+                    <div class="story-wrapper">
+                        <div class="story-off">
+                            <img src="뽀야앞발.jpg"/>
+                        </div>
+                        <p>내 스토리</p>
+                    </div>
+                    <div class="story-wrapper">
+                        <div class="story-off">
+                            <img src="뽀야앞발.jpg"/>
+                        </div>
+                        <p>내 스토리</p>
+                    </div>
+                    <div class="story-wrapper">
+                        <div class="story-off">
+                            <img src="뽀야앞발.jpg"/>
+                        </div>
+                        <p>내 스토리</p>
+                    </div>
+                    <div class="story-wrapper">
+                        <div class="story-off">
+                            <img src="뽀야앞발.jpg"/>
+                        </div>
+                        <p>내 스토리</p>
+                    </div>
+                    <div class="story-wrapper">
+                        <div class="story-off">
+                            <img src="뽀야앞발.jpg"/>
+                        </div>
+                        <p>내 스토리</p>
+                    </div>
+                    <div class="story-wrapper">
+                        <div class="story-off">
+                            <img src="뽀야앞발.jpg"/>
+                        </div>
+                        <p>내 스토리</p>
+                    </div>
+                    <div class="story-wrapper">
+                        <div class="story-off">
+                            <img src="뽀야앞발.jpg"/>
+                        </div>
+                        <p>내 스토리</p>
+                    </div>
+                </div>
+                <div id ="post-container">
+                    <div class="post-wrapper">
+                        <div class = "post-header">
+                            <div class = "left-wrapper">
+                                <img src = "뽀야앞발.jpg">
+                                <P>이가을</P>
+                            </div>
+                            <div class = "right-wrapper">
+                                <img src="more@3x.png">
+                            </div>
+                        </div>
+                        <div class = "post-body"><!--튜터님은 여기에 좋아요,채팅,DM, 북마크까지 넣음.-->
+                            <img src="뽀야앞발.jpg">
+                            <div class = "post-icons-wrapper">
+                                <div class = "left-wrapper">
+                                    <img src="like@3x.png">
+                                    <img src="comment@3x.png">
+                                    <img src="dm@3x.png">
+                                </div>
+                                <div class="right-wrapper">
+                                    <img class ="bookmark" src="favorite@3x.png">
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class = "post-footer">
+                            <div class = "post-like-wrapper">
+                                <img src="뽀야앞발.jpg">
+                                <p><strong>이가을</strong>님 <strong>외 80명</strong>이 좋아합니다</p>
+                            </div>
+                            <div class = "post-comment-wrapper">
+                                <p class = "post-author">이가을</p>
+                                <p class = "post-comment">뽀야 너무 귀엽다.</p>
+                            </div>
+                            <div class = "post-time">
+                                <p>8시간 전</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post-wrapper">
+                        <div class = "post-header">
+                            <div class = "left-wrapper">
+                                <img src = "뽀야앞발.jpg">
+                                <P>이가을</P>
+                            </div>
+                            <div class = "right-wrapper">
+                                <img src="more@3x.png">
+                            </div>
+                        </div>
+                        <div class = "post-body"><!--튜터님은 여기에 좋아요,채팅,DM, 북마크까지 넣음.-->
+                            <img src="뽀야앞발.jpg">
+                            <div class = "post-icons-wrapper">
+                                <div class = "left-wrapper">
+                                    <img src="like@3x.png">
+                                    <img src="comment@3x.png">
+                                    <img src="dm@3x.png">
+                                </div>
+                                <div class="right-wrapper">
+                                    <img class ="bookmark" src="favorite@3x.png">
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class = "post-footer">
+                            <div class = "post-like-wrapper">
+                                <img src="뽀야앞발.jpg">
+                                <p><strong>이가을</strong>님 <strong>외 80명</strong>이 좋아합니다</p>
+                            </div>
+                            <div class = "post-comment-wrapper">
+                                <p class = "post-author">이가을</p>
+                                <p class = "post-comment">뽀야 너무 귀엽다.</p>
+                            </div>
+                            <div class = "post-time">
+                                <p>8시간 전</p>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id ="footer"><!--모바일화면에서 전체페이지 푸터부분-->
+                <div id="icon-wrapper"><!--icon이미지를 wrapper로 묶어준다.-->
+                    <img src="home@3x.png"/>
+                    <img src="search@3x.png"/>
+                    <img src="trending@3x.png"/>
+                    <img src="like@3x.png"/>
+                    <img src="home@3x.png"/>
+                </div>
+            </div>
+            </div>
+        <div id="desktop-rightpart"><!--데스크탑에서 오른쪽에 있을 친구-->
+        <div id="desktop-rightpart-header">
+            <p id="recommendation">회원님을 위한 추천</p>
+            <p id="show-all">모두보기</p>
+        </div>
+        <div class="desktop-rightpart-container">
+            <div class="desktop-rightpart-contents-wrapper">
+                <div class="content-left-wrapper">
+                    <img src="뽀야앞발.jpg">
+                    <div class="content">
+                        <p class="username">이가을</p>
+                        <p class="follow-info">이가을님이 팔로우합니다</p>
+                    </div>
+                </div>
+                <p class="follow">팔로우</p>
+            </div>
+        </div>
+        <div class="desktop-rightpart-container">
+            <div class="desktop-rightpart-contents-wrapper">
+                <div class="content-left-wrapper">
+                    <img src="뽀야앞발.jpg">
+                    <div class="content">
+                        <p class="username">이가을</p>
+                        <p class="follow-info">이가을님이 팔로우합니다</p>
+                    </div>
+                </div>
+                <p class="follow">팔로우</p>
+            </div>
+        </div>
+        <div class="desktop-rightpart-container">
+            <div class="desktop-rightpart-contents-wrapper">
+                <div class="content-left-wrapper">
+                    <img src="뽀야앞발.jpg">
+                    <div class="content">
+                        <p class="username">이가을</p>
+                        <p class="follow-info">이가을님이 팔로우합니다</p>
+                    </div>
+                </div>
+                <p class="follow">팔로우</p>
+            </div>
+        </div>
+        <div class="desktop-rightpart-container">
+            <div class="desktop-rightpart-contents-wrapper">
+                <div class="content-left-wrapper">
+                    <img src="뽀야앞발.jpg">
+                    <div class="content">
+                        <p class="username">이가을</p>
+                        <p class="follow-info">이가을님이 팔로우합니다</p>
+                    </div>
+                </div>
+                <p class="follow">팔로우</p>
+            </div>
+        </div>
+        <div class="desktop-rightpart-container">
+            <div class="desktop-rightpart-contents-wrapper">
+                <div class="content-left-wrapper">
+                    <img src="뽀야앞발.jpg">
+                    <div class="content">
+                        <p class="username">이가을</p>
+                        <p class="follow-info">이가을님이 팔로우합니다</p>
+                    </div>
+                </div>
+                <p class="follow">팔로우</p>
+            </div>
+        </div>
+
+
+    </div>
+    </div>
+
+</body>
+</html>

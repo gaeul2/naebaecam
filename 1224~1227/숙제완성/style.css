@@ -1,0 +1,399 @@
+/*브라우저 크기에 따라 늘어나고 줄어들려면 % 사용 그리고 늘어나는 한계치를 max-width로 정해주면 됨.*/
+/*헤더와 푸터에 position:fixed를 먹여서 먼저구현*/
+/*헤더와 푸터는 width:100%, 헤더는 top:0 푸터는 bottom:0*/
+/*컨테이너설명은 3분부터*/
+/*컨테이너 안의 아이콘이 왼쪽/아래쪽 나뉘는 부분은 해설1 6분50초에 설명을 들어*/
+/**/
+
+/*media는 css에서 쓰는 조건문이라고 생각하면되고 ()에 조건을 넣는데/n
+  min-width(최소폭이 721이라면)은 곧 이거보다 높을땐 다 적용하겠다는 말. 그래서 데스크탑화면에 쓰는것.*/
+
+@media (min-width:721px) {/*데스크탑화면에서만 적용되는 조건*/
+    #full-container{
+    display:flex;
+    justify-content: space-around;
+    background-color: whitesmoke;
+    width: 100%;
+    }
+    #mobile-header{
+        display: none;
+    }
+    #mobile-header .header-icon{
+        display: none;
+    }
+    #mobile-header #logo {
+        display: none;
+    }
+    /*데스크탑용 헤더*/
+    #desktop-header{
+        background-color: white;
+        display : flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 50px;
+    }
+    #desktop-header #desktop-header-left{
+        margin-left: 10%;
+    }
+    #desktop-header img{
+        width: 100px;
+        margin-top: 5%;
+    }
+    #desktop-header input{
+        margin-bottom: 5px;
+        width: 250px;
+        height: 30px;
+        background-color: whitesmoke;
+        border: 1px solid lightgray;
+        background-image: url("search@3x.png");/*백그라운드로 넣으면 이미지가 인풋박스안에 들어감.*/
+        background-repeat: no-repeat;/*이미지가 반복없이 한개만 나오게해줌*/
+        background-position: left center; /*input영역안에 이미지를 x축,y축으로 정해 위치지정해줄수 있음*/
+        background-size: 11px; /*백그라운드로 삽입했으니 얘로 사이즈조절*/
+        background-position-x: 10px;/*박스가 아니니까 x축위치 조절로 오른쪽으로 보냄*/
+    }
+
+    #desktop-header #desktop-header-right{
+        display: flex;
+        align-items: center;
+        justify-content: space-between ;
+        margin-right: 5%;
+    }
+    #desktop-header #desktop-header-right .desktop-header-icon {
+        width: 18px;
+        margin : 2px 8px;
+
+    }
+}
+/*max-width(최대폭이 720이라면)은 곧 이거보다 작을땐 다 적용하겠다는 말. 그래서 모바일 화면에서만 이렇게 적용됨.*/
+@media(max-width: 720px) {/*모바일 화면에서만 적용되는 조건*/
+    body { /*html body에 css줄때는 이렇게*/
+        max-width: 720px;
+        margin: 0 auto;
+}
+    #container{
+        padding-top: 12%;
+        padding-bottom: 12%;
+    }
+    #desktop-header{
+        display: none;
+    }
+
+    /*모바일용 헤더*/
+    #mobile-header {
+        display: flex;
+        justify-content: space-between;
+        background-color: white;
+        align-items: center;
+        width: 100%;
+        position: fixed;
+        max-width: 720px;
+        top:0;
+        border-bottom: 1px solid lightgray;
+    }
+    #mobile-header .header-icon {
+        margin: 3% 5%;
+        width: 6%;
+    }
+    #mobile-header #logo {
+        width: 27%;
+    }
+}
+/*1. 우선 위에 내스토리 동그라미구역들!*/
+.story-wrapper img{/*이미지 자체에 먼저 Css먹이고*/
+    width: 100%; /*여기서 radius로 타원형으로 주고!*/
+    height: 100%;
+    border-radius: 50%;
+}
+.story-wrapper p{ /*이건 별 변화가 없는데..*/
+    margin-top: 10%;
+    margin-bottom: 0%;
+    font-size: 11px;
+}
+.story-wrapper .story-off{/*다시 쓰니 되네;;;이거 뭐니*/
+    width: 13vw;/*넓이를 웹페이지에 맞춰 늘어나게 vw로 주고 */
+    height: 13vw;/*높이도 vw로 주면서 넓이와 같은수치로 줘야 동그랗게 만들기 좋음*/
+    max-width: 80px;
+    max-height: 80px;
+    border: 2px solid transparent; /*테두리를 무색으로 실선으로 만들어주고*/
+    border-radius: 50%;/*모서리 둥글게를 50%로 주면 동그래짐*/
+    /*background-image: linear-gradient(#f6f6f6, #f6f6f6),*/
+    /*    linear-gradient(#c4c4c4, #c4c4c4);*/
+    /*background-origin: border-box;*/
+    /*background-clip: content-box, border-box;*/ /*이부분은 나중에 연구해봐*/
+}
+/*.story-wrapper .story-on {*/ /*얘랑같이 연구해보도록*/
+/*  width: 13vw;*/
+/*  max-width: 80px;*/
+/*  max-height: 80px;*/
+/*  height: 13vw;*/
+/*  border: 2px solid transparent;*/
+/*  border-radius: 50%;*/
+/*  background-image: linear-gradient(#f6f6f6, #f6f6f6),*/
+/*    linear-gradient(to right, #ff7700, #ff3636aa, #ff00c3);*/
+/*  background-origin: border-box;*/
+/*  background-clip: content-box, border-box;*/
+/*}*/
+.story-wrapper{
+    width : auto;
+    margin : 2.5% 3.5%; /*이렇게줘야 바디안에 잘들어오네*/
+    display:flex;/*이 플렉스와 story-container가 만나서 가로로 쭉~됨 그전에 얘만있으면 세로다.*/
+    flex-direction: column; /*이래야 내스토리 글씨가 사진밑으로 내려옴*/
+    align-items: center; /**/
+    justify-content:center;
+}
+@media (min-width:721px) {/*데스크탑화면에서만 적용되는 조건*/
+    #container #story-container {
+        padding-left: 1%;
+        margin: 4% 0;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        background-color: #f6f6f6;
+        border: 1px solid lightgray;
+        overflow: hidden; /*얘가 있으면 넘치는애들은 사라짐*/
+    }
+}
+@media(max-width: 720px) {/*모바일 화면에서만 적용되는 조건*/
+    #story-container {
+        padding-left: 1%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        background-color: #f6f6f6;
+        border-bottom: 1px solid lightgray;
+        overflow: hidden; /*얘가 있으면 넘치는애들은 사라짐*/
+    }
+}
+@media (min-width:721px) {/*데스크탑화면에서만 적용되는 조건*/
+    #container { /*위에 헤더랑 푸터에 가리니까 얘로 가운데 몸통애들을 안쪽여백으로 위와 아래만 줘서 맞춰줌*/
+        max-width: 900px;
+        margin: 0 auto; /*rightpart와 잘 맞춰야해*/
+    }
+    #container #post-container{
+        display:flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    #container #post-container .post-wrapper{
+        margin: 2% 0;
+        border: 1px solid lightgray;
+    }
+    .post-header .left-wrapper img{
+        width: 50px;/*얘네도 %줘야 페이지 늘어나고 줄어들떄마다 맞게 변화하겠지?*/
+        height: 50px;/*근데 사진자체가 비율이 비슷하지 않아서 %로 맞추기 힘듬*/
+        border-radius: 50%; /*지금아마 타원형일것.*/
+        border : 1px solid lightgray;
+        margin: 0 2%;
+    }
+}
+@media(max-width: 720px) {/*모바일 화면에서만 적용되는 조건*/
+    #container { /*위에 헤더랑 푸터에 가리니까 얘로 가운데 몸통애들을 안쪽여백으로 위와 아래만 줘서 맞춰줌*/
+        padding-top: 12%;
+        padding-bottom: 12%;
+    }
+}
+/*2. 본문쓰....*/
+@media(max-width: 720px) {/*모바일 화면에서만 적용되는 조건*/
+.post-header .left-wrapper img{
+    width: 13vw;/*얘네도 %줘야 페이지 늘어나고 줄어들떄마다 맞게 변화하겠지?*/
+    height: 13vw;/*근데 사진자체가 비율이 비슷하지 않아서 %로 맞추기 힘듬*/
+    border-radius: 50%; /*지금아마 타원형일것.*/
+    border : 1px solid lightgray;
+    margin: 0 2%; /*이걸로 사용자 프로필부분도 왼쪽 여백 살짝 띄울수 있음. 옆에 p태그가 차지하는 공간이 있으니 적당히 띄워짐. */
+}
+}
+.post-header .left-wrapper p {
+    margin-left: 2%; /*얘로 사진과의 간격을 준다. 페이지사이즈에 맞게 변하도록 %로 주기*/
+    font-size: 14px;
+    font-weight: bold; /*글씨 굵게하기*/
+}
+/*포스트- 공통*/
+.left-wrapper{
+    display: flex;
+    /*justify-content: left;!*얘들은 알아서 왼쪽에 잘붙어있으니 굳이..*!*/
+    align-items: center; /*이래야 글씨가 세로축 중앙으로 오니까*/
+    margin-left: 1%;
+    width: 100%;
+}
+.right-wrapper { /*이미지 하나뿐이므로 그냥 얘로 퉁침*/
+    display: flex;
+    justify-content: right;
+    margin-right: 3%;/*오른쪽 여백 살짝줘서 보기좋게*/
+    width: 80%;
+}
+/*포스트- 헤더*/
+.post-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 1% 0;
+}
+/*포스트- 바디*/
+.post-body img{/*가로 맞춰주면 알아서 사진이 맞게 들어감.*/
+    width: 100%;
+}
+.post-body .post-icons-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1%;
+}
+.post-body .post-icons-wrapper .left-wrapper img{/*튜터님은 조금 다르게 풀었다. 확인.*/
+    width: 15%;
+    margin: 2% 3%
+}
+.post-body .post-icons-wrapper .right-wrapper img{
+    width: 16%;
+    margin: 2% 4%
+}
+
+/**/
+/*포스트 - 푸터*/
+.post-footer {
+  padding-left: 2%; /*body보다는 들어가있어야 내용물같으니..*/
+  border-bottom: 1px solid lightgray;
+}
+.post-footer .post-like-wrapper{
+    display:flex;
+    align-items: center;
+    margin-top:1%;
+    margin-bottom: 1%;
+}
+@media(min-width: 721px) {/*데스크탑 화면에서만 적용되는 조건*/
+    .post-footer .post-like-wrapper img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 1px solid lightgray;
+        margin: 0 1%;
+    }
+    .post-footer .post-like-wrapper p{
+        font-size: 15px;
+    }
+}
+
+@media(max-width: 720px) {/*모바일 화면에서만 적용되는 조건*/
+    .post-footer .post-like-wrapper img {
+        width: 6vw;
+        height: 6vw;
+        border-radius: 50%;
+        border: 1px solid lightgray;
+        margin: 0 1%;
+    }
+    .post-footer .post-like-wrapper p{
+        font-size: 11px;
+    }
+}
+
+.post-footer .post-comment-wrapper {
+    display: flex;
+}
+.post-footer .post-comment-wrapper .post-author{
+    font-weight: bold;
+    margin: 0% 2% 0% 2%;
+}
+.post-footer .post-comment-wrapper .post-comment{
+    font-size: medium;
+    margin: 0%; /*위에서 양옆여백을 줬으니 얘는 0주면 됨.*/
+}
+.post-footer .post-time{
+    font-size: 10px;
+    color: grey;
+    margin-left: 3%;
+    margin-top: 3%;
+}
+
+/*데스크탑으로 볼때 옆에보일친구*/
+@media(min-width: 721px) {/*데스크탑 화면에서만 적용되는 조건*/
+    #desktop-rightpart{
+        margin : 1% 3%;
+    }
+    #desktop-rightpart-header{
+        width: 400px;
+        display: flex;
+        justify-content: space-between;
+        align-items:center;
+    }
+    #desktop-rightpart-header #recommendation {
+        color: grey;
+        font-size: 14px;
+        font-weight: bold;
+        margin-left: 3%;
+    }
+    #desktop-rightpart-header #show-all{
+        font-size: 14px;
+        font-weight: bold;
+        margin-right: 1%;
+    }
+    .desktop-rightpart-container .desktop-rightpart-contents-wrapper{
+        width: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .desktop-rightpart-container .desktop-rightpart-contents-wrapper .content-left-wrapper{
+        display: flex;
+        align-items: center;
+        width: 270px;
+        margin-left: 2%;
+    }
+    .desktop-rightpart-container .desktop-rightpart-contents-wrapper img{
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        margin: 2% 3%;
+    }
+    .desktop-rightpart-container .desktop-rightpart-contents-wrapper .content{
+        display:flex;
+        flex-direction: column;
+    }
+    .desktop-rightpart-container .desktop-rightpart-contents-wrapper .content .username{
+        font-weight: bold;
+        font-size: 14px;
+        margin: 1% 0%;
+    }
+    .desktop-rightpart-container .desktop-rightpart-contents-wrapper .content .follow-info{
+        color: grey;
+        font-size:14px;
+        margin:0;
+    }
+    .desktop-rightpart-container .desktop-rightpart-contents-wrapper .follow{
+        color: #1178d0;
+        font-weight: bold;
+        font-size: 14px;
+        margin-right: 10px;
+    }
+
+}
+@media (max-width: 720px){
+    #desktop-rightpart{
+        display: none;
+    }
+}
+/*페이지 전체 푸터 CSS*/
+@media (min-width: 721px){ /*데스크탑으로 볼때는 푸터 안보이게*/
+    #footer{
+        display: none;
+    }
+}
+
+#footer{
+    position: fixed;/*얘는 아래에 고정할거니까. 위치를 고정으로.*/
+    bottom:0;/*아래 붙으라고 이렇게 해줌*/
+    background-color: white; /*색은 이따 white로 바꾸자*/
+    width: 100%;
+    max-width: : 720px;/*픽셀쓰지 말랬는데 이건 어쩔수없이 써야한다.*/
+    border-top: 1px solid grey;
+    /*height는 따로 안보인다. 아래의 icon-wrapper에서 위아래여백으로 높이가 맞춰지기 때문인듯.*/
+}
+#footer #icon-wrapper{/*상위 div를 표시해주고 푸터의 아이콘들을 묶은 div css*/
+    margin : 4% 6%; /* %사용해서 아이콘div를 조금 늘려서 바깥여백을 만들어줌*/
+    display: flex; /* 아이콘들을 묶은 부모요소가 얘이니까 여기서 flex해줌*/
+    justify-content: space-between; /*양끝 여백과 함께 아이콘사이에 가로축 여백이 생기면서 정렬*/
+    align-items: center;/*세로축에서 가운데로 아이콘들 정렬*/
+}
+#footer #icon-wrapper img{
+    width : 6%; /*img태그에 width를 만들어서 아이콘 크기를 크게 만들어줌*/
+}
