@@ -1,13 +1,3 @@
-/*브라우저 크기에 따라 늘어나고 줄어들려면 % 사용 그리고 늘어나는 한계치를 max-width로 정해주면 됨.*/
-/*헤더와 푸터에 position:fixed를 먹여서 먼저구현*/
-/*헤더와 푸터는 width:100%, 헤더는 top:0 푸터는 bottom:0*/
-/*컨테이너설명은 3분부터*/
-/*컨테이너 안의 아이콘이 왼쪽/아래쪽 나뉘는 부분은 해설1 6분50초에 설명을 들어*/
-/**/
-
-/*media는 css에서 쓰는 조건문이라고 생각하면되고 ()에 조건을 넣는데/n
-  min-width(최소폭이 721이라면)은 곧 이거보다 높을땐 다 적용하겠다는 말. 그래서 데스크탑화면에 쓰는것.*/
-
 @media (min-width:721px) {/*데스크탑화면에서만 적용되는 조건*/
     #full-container{
     display:flex;
@@ -116,23 +106,8 @@
     max-height: 80px;
     border: 2px solid transparent; /*테두리를 무색으로 실선으로 만들어주고*/
     border-radius: 50%;/*모서리 둥글게를 50%로 주면 동그래짐*/
-    /*background-image: linear-gradient(#f6f6f6, #f6f6f6),*/
-    /*    linear-gradient(#c4c4c4, #c4c4c4);*/
-    /*background-origin: border-box;*/
-    /*background-clip: content-box, border-box;*/ /*이부분은 나중에 연구해봐*/
 }
-/*.story-wrapper .story-on {*/ /*얘랑같이 연구해보도록*/
-/*  width: 13vw;*/
-/*  max-width: 80px;*/
-/*  max-height: 80px;*/
-/*  height: 13vw;*/
-/*  border: 2px solid transparent;*/
-/*  border-radius: 50%;*/
-/*  background-image: linear-gradient(#f6f6f6, #f6f6f6),*/
-/*    linear-gradient(to right, #ff7700, #ff3636aa, #ff00c3);*/
-/*  background-origin: border-box;*/
-/*  background-clip: content-box, border-box;*/
-/*}*/
+
 .story-wrapper{
     width : auto;
     margin : 2.5% 3.5%; /*이렇게줘야 바디안에 잘들어오네*/
