@@ -51,7 +51,6 @@
     #desktop-header #desktop-header-right .desktop-header-icon {
         width: 18px;
         margin : 2px 8px;
-
     }
 }
 /*max-width(최대폭이 720이라면)은 곧 이거보다 작을땐 다 적용하겠다는 말. 그래서 모바일 화면에서만 이렇게 적용됨.*/
