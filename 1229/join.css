@@ -1,0 +1,72 @@
+body{
+    background-color: whitesmoke;
+}
+#container{
+    background-color: white;
+    max-width : 800px;
+    width : 400px;
+    height: 600px;
+    margin:0 auto;
+    margin-top: 10%;
+    border: 1px solid lightgray;
+    border-radius: 2px;
+}
+/*로고와 메세지*/
+#img-text-wrapper{
+    margin: 0 0 3% 12%;
+}
+#img-text-wrapper img{
+    height: 50px;
+    width: 130px;
+    margin : 15% 0 5% 25%;
+}
+#img-text-wrapper p{
+    color: deepskyblue;
+    font-size: 14px;
+    font-weight: bold;
+    width: 250px;
+    margin-left: 8%;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/*입력하는 부분들*/
+#input-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#input-wrapper{
+    width: 400px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+#input-wrapper .join-input{
+    background-color: whitesmoke;
+    height: 30px;
+    border: 1px solid lightgray;
+    border-radius: 2px;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    width: 300px;
+}
+/*인풋박스 선택시 색깔 변경*/
+#input-wrapper .join-input:focus{
+    outline: 0.5px solid deepskyblue;
+}
+
+
+/* 가입하기 버튼*/
+#input-div button{
+    margin-top: 20px;
+    width: 205px;
+    height: 30px;
+    background-color: skyblue;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    color : white;
+    font-size: 13px;
+    font-weight: bold;
+}
