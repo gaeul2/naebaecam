@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    회원가입
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="wrap">
+            <h2 class="title-center"> 회원가입 </h2>
+            <!--화면에 있는 데이터를 서버로 전송할때 많이 사용하는 태그가 form태그-->
+            <form class="form-area" method="post" action="/sign-up/"> <!--method속성 추가, action속성으로 url추가-->
+                {% csrf_token %} <!--장고에서 post요청을 보낼때 보안을 지켜주기 위해 csrf_token을 사용-->
+                <!--우리가 입력받는 정보는 input이므로 input태그에 주목! 우리가봐야할것은 'name'! -->
+                <!--name이 username, password, password2, bio인 4개의 정보를 서버로 전송해보자! 일단 user앱의 view.py로 고고-->
+                <div class="form-group mt-2 mb-2">
+                    <label for="username">이름</label>
+                    <input type="text" class="form-control" id="username" name="username">
+                </div>
+                <div class="form-group mt-2 mb-2">
+                    <label for="password">비밀번호</label>
+                    <input type="password" class="form-control" id="password" name="password">
+                </div>
+                <div class="form-group mt-2 mb-2">
+                    <label for="password2">비밀번호 확인</label>
+                    <input type="password" class="form-control" id="password2" name="password2">
+                </div>
+                <div class="form-group mt-2 mb-2">
+                    <label for="bio">나를 한마디로</label>
+                    <input type="text" class="form-control" id="bio" name="bio">
+                </div>
+                {% if error %} <!--에러가 전달이 된다면 (views.py의 sign_up_view에서 예외상황시 redirect하면서 에러전달하도록 함)-->
+                    <div class="alert alert-danger" role="alert">
+                        {{ error }}
+                    </div>
+                {% endif %}
+                <hr>
+                <div style="float: right">
+                    <!--이 버튼은 form태그 안에있으면 해당form을 실행시켜주는 역할을 함-->
+                    <!--위에서 form태그에 method와 action속성을 주었기때문에 -->
+                    <!--form안의 내용들을 post형식으로 /sign-up/url에 데이터를 보낼 수 있게 도와주는 버튼이됨-->
+                    <button type="submit" class="btn btn-primary">회원가입</button>
+                    <a href="/sign-in" class="btn btn-secondary">로그인 페이지로</a>
+                </div>
+            </form>
+
+        </div>
+    </div>
+{% endblock %}

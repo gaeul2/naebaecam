@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    로그인
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="wrap">
+            <h2 class="title-center"> 로그인</h2><!--버튼을 누르면 post방식으로 sign-in url로 요청을 하게됨-->
+            <form class="form-area" action="/sign-in/" method="post" >
+                {% csrf_token %}
+                <div class="form-group mt-2 mb-2"><!--username, password 를 담아서 url로 넘어가겠지-->
+                    <label for="username">이름</label>
+                    <input type="text" class="form-control" id="username" name="username">
+                </div>
+                <div class="form-group mt-2 mb-2">
+                    <label for="password">비밀번호</label>
+                    <input type="password" class="form-control" id="password" name="password">
+                </div>
+                {% if error %} <!--에러가 전달이 된다면 (views.py의 sign_up_view에서 예외상황시 redirect하면서 에러전달하도록 함)-->
+                    <div class="alert alert-danger" role="alert">
+                        {{ error }}
+                    </div>
+                {% endif %}
+                <hr>
+                <div style="float: right">
+                    <!--버튼을 클릭하면 form태그가 실행이 될것임-->
+                    <button type="submit" class="btn btn-primary">로그인</button>
+                    <a href="/sign-up" class="btn btn-secondary">회원가입 페이지로</a>
+                </div>
+            </form>
+
+        </div>
+    </div>
+{% endblock %}

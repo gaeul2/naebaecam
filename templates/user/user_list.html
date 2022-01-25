@@ -1,0 +1,55 @@
+<!-- templates/user/user_list.html -->
+{% extends 'base.html' %} <!--base.html을 확장해서 사용할게-->
+{% block title %} <!--title은 -->
+    사용자 리스트 <!--내가 넣는 글로 쓸게-->
+{% endblock %}
+
+{% block content %}<!--여기서부터 user_list에 해당하는 내용-->
+    <div class="container timeline-container">
+        <div class="row">
+            <!-- 왼쪽 컬럼 -->
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">     <!--user(로그인한사용자).의 이름-->
+                        <h5 class="card-title">{{ user.username }}</h5>
+                        <p class="card-text"> {{ user.bio }}</p> <!--user.의 한줄인사-->
+
+                    </div>
+                </div>
+            </div>
+            <!-- 오른 쪽 컬럼-->
+            <div class="col-md-7">
+                <div class="row">
+                    <div class="alert alert-success" role="alert">                        <!--user.follow하면 그냥 나를 팔로우하는 모든사람들 출력가능-->
+                                              <!--user.를 팔로우하는사람들.의 수-->                     <!--user.가 팔로우하는사람들.의 수-->
+                        나를 팔로우 하는 사람 수 : {{ user.followee.count }} 명 / 내가 팔로우 하는 사람 수 : {{ user.follow.count }} 명
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- 사용자 리스트 반복문 views.py의 user_view함수에서 던져준 user_list-->
+                    {% for ul in user_list %}
+                        <div class="card">
+                            <div class="card-body">   <!--user_list의 요소에서.의 이름-->
+                                <h5 class="card-title">{{ ul.username }}</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">{{ ul.email }}</h6>
+                                <p class="card-text">
+                                    {{ ul.bio }}
+                                </p>
+                                <p class="card-text">
+                                    팔로잉 {{ ul.follow.count }} 명 / 팔로워 {{ ul.followee.count }} 명
+                                </p>
+                                {% if ul in user.follow.all %} <!--사용자의 팔로우에 그 사람이있다면 취소버튼보여주고-->
+                                    <a href="/user/follow/{{ ul.id }}" class="card-link">[팔로우 취소]</a>
+                                {% else %} <!--사용자의 팔로우에 그 사람이 없다면 팔로우버튼보여줌-->
+                                    <a href="/user/follow/{{ ul.id }}" class="card-link">[팔로우]</a>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <hr>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+{% endblock %}
